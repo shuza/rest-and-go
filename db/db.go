@@ -3,6 +3,7 @@ package db
 import (
 	_ "github.com/mattn/go-sqlite3"
 	"database/sql"
+	"fmt"
 )
 
 func NewConnection() *sql.DB {
@@ -18,6 +19,8 @@ func GetRews(query string) (*sql.Rows, error) {
 }
 
 func ExecuteQuery(query string) bool {
-	_, err := NewConnection().Exec(query)
+	result, err := NewConnection().Exec(query)
+	fmt.Println(result)
+	fmt.Println(err)
 	return err == nil
 }
