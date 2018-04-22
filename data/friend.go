@@ -1,7 +1,7 @@
 package data
 
 import (
-	"github.com/shuza/rest-and-go/db"
+	"../db"
 	"fmt"
 )
 
@@ -13,7 +13,7 @@ type Friend struct {
 }
 
 func (f *Friend) Save() bool {
-	query := "CREATE TABLE IF NOT EXIST friends(friend_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+	query := "CREATE TABLE IF NOT EXISTS friends(friend_id INTEGER PRIMARY KEY AUTOINCREMENT," +
 		"user_id TEXT, friend_name TEXT, friend_mobile_number TEXT);"
 	if db.ExecuteQuery(query) {
 		query = "INSERT INTO friends (user_id, friend_name, friend_mobile_number) VALUES ('%d', '%s', '%s');"
@@ -23,7 +23,7 @@ func (f *Friend) Save() bool {
 	return false
 }
 
-func GetFriendByuserId(userId int) []Friend {
+func GetFriendByUserId(userId int) []Friend {
 	query := "SELECT * FROM friends WHERE user_id='%d'"
 	query = fmt.Sprintf(query, userId)
 	rows, err := db.GetRews(query)

@@ -14,10 +14,10 @@ type Session struct {
 
 func (s *Session) Save() bool {
 	query := "CREATE TABLE IF NOT EXISTS sessions(session_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-		"use_id INTEGER, access_token TEXT, refresh_token TEXT);"
+		"user_id INTEGER, access_token TEXT, refresh_token TEXT);"
 	result := db.ExecuteQuery(query)
 	if result {
-		query = "INSERT INTO sessions (use_id, access_token, refresh_token) VALUES ('%d', '%s', '%s');"
+		query = "INSERT INTO sessions (user_id, access_token, refresh_token) VALUES ('%d', '%s', '%s');"
 		query = fmt.Sprintf(query, s.UserId, s.AccessToken, s.RefreshToken)
 		return db.ExecuteQuery(query)
 	}

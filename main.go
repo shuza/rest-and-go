@@ -16,6 +16,9 @@ func main() {
 	v1.HandleFunc("/user/create", api.CreateUser).Methods("POST")
 	v1.HandleFunc("/user/auth/login", api.LoginUser).Methods("POST")
 
+	v1.HandleFunc("/friend/create", api.Authorization(api.AddFriend)).Methods("POST")
+	v1.HandleFunc("/friend/list", api.Authorization(api.GetFriendList)).Methods("GET")
+
 	fmt.Println("Application running On : 8000....")
 	http.ListenAndServe(":8000", routes)
 }
