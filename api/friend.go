@@ -32,11 +32,11 @@ func AddFriend(w http.ResponseWriter, r *http.Request) {
 func GetFriendList(w http.ResponseWriter, r *http.Request) {
 	userId, err := strconv.Atoi(r.Header.Get("user_id"))
 	if err == nil {
-		frineds := data.GetFriendByUserId(userId)
+		friends := data.GetFriendByUserId(userId)
 		w.Header().Set("Content-Type", "application/json; charset=UFT-8")
 		json.NewEncoder(w).Encode(data.Response{
 			Code: http.StatusOK,
-			Data: frineds,
+			Data: friends,
 		})
 		return
 	}
