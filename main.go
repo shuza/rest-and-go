@@ -7,6 +7,17 @@ import (
 	"net/http"
 )
 
+/**
+ *
+ * :=  created by:  Shuza
+ * :=  create date:  23-Apr-18
+ * :=  (C) CopyRight Shuza
+ * :=  www.shuza.ninja
+ * :=  shuza.sa@gmail.com
+ * :=  Fun  :  Coffee  :  Code
+ *
+ **/
+
 var routes = mux.NewRouter()
 
 func main() {
