@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"./api"
 	"fmt"
+	"github.com/gorilla/mux"
 	"net/http"
+	"rest-and-go/api"
 )
 
 /**

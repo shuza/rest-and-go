@@ -1,10 +1,10 @@
 package api
 
 import (
-	"net/http"
-	"strconv"
-	"../data"
 	"encoding/json"
+	"net/http"
+	"rest-and-go/data"
+	"strconv"
 )
 
 func AddFriend(w http.ResponseWriter, r *http.Request) {

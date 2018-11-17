@@ -1,8 +1,8 @@
 package data
 
 import (
-	"../db"
 	"fmt"
+	"rest-and-go/db"
 )
 
 type Session struct {

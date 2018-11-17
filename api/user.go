@@ -1,10 +1,10 @@
 package api
 
 import (
-	"net/http"
-	"../data"
-	"../utils"
 	"encoding/json"
+	"net/http"
+	"rest-and-go/data"
+	"rest-and-go/utils"
 )
 
 func CreateUser(w http.ResponseWriter, r *http.Request) {

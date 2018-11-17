@@ -1,10 +1,10 @@
 package api
 
 import (
-	"net/http"
-	"strconv"
-	"../data"
 	"encoding/json"
+	"net/http"
+	"rest-and-go/data"
+	"strconv"
 )
 
 func Authorization(h http.HandlerFunc) http.HandlerFunc {
