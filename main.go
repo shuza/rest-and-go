@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
+	"github.com/shuza/rest-and-go/api"
 	"net/http"
-	"rest-and-go/api"
 )
 
 /**
@@ -18,18 +17,8 @@ import (
  *
  **/
 
-var routes = mux.NewRouter()
-
 func main() {
-	routes.HandleFunc("/", api.IndexHandler).Methods("GET", "POST", "PATCH", "OPTIONS", "PUT", "DELETE")
-
-	v1 := routes.NewRoute().PathPrefix("/api/v1").Subrouter()
-	v1.HandleFunc("/user/create", api.CreateUser).Methods("POST")
-	v1.HandleFunc("/user/auth/login", api.LoginUser).Methods("POST")
-
-	v1.HandleFunc("/friend/create", api.Authorization(api.AddFriend)).Methods("POST")
-	v1.HandleFunc("/friend/list", api.Authorization(api.GetFriendList)).Methods("GET")
-
+	routes := api.GetRoutes()
 	fmt.Println("Application running On : 8000....")
 	http.ListenAndServe(":8000", routes)
 }

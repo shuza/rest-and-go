@@ -2,9 +2,9 @@ package api
 
 import (
 	"encoding/json"
+	"github.com/shuza/rest-and-go/data"
+	"github.com/shuza/rest-and-go/utils"
 	"net/http"
-	"rest-and-go/data"
-	"rest-and-go/utils"
 )
 
 func CreateUser(w http.ResponseWriter, r *http.Request) {

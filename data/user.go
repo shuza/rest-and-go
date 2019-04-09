@@ -2,7 +2,7 @@ package data
 
 import (
 	"fmt"
-	"rest-and-go/db"
+	"github.com/shuza/rest-and-go/db"
 )
 
 type User struct {

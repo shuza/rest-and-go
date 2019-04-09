@@ -2,8 +2,8 @@ package api
 
 import (
 	"encoding/json"
+	"github.com/shuza/rest-and-go/data"
 	"net/http"
-	"rest-and-go/data"
 	"strconv"
 )
 
