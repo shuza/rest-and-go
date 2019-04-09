@@ -1,5 +1,7 @@
 language: go
 
+before_install: go mod vendor
+
 matrix:
   include:
   - go: "1.10.x"
