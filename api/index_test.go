@@ -25,6 +25,7 @@ func TestIndexHandler(t *testing.T) {
 		convey.Convey("When request is handled by the Router", func() {
 			routes.ServeHTTP(resp, req)
 			convey.Convey("Response code should be 200", func() {
+
 				convey.So(resp.Code, convey.ShouldEqual, 200)
 			})
 		})
