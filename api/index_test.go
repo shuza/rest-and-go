@@ -1,7 +1,7 @@
 package api
 
 import (
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/smartystreets/goconvey/convey"
 	"net/http/httptest"
 	"testing"
 )
@@ -16,16 +16,16 @@ import (
  **/
 
 func TestIndexHandler(t *testing.T) {
-	Convey("Given HTTP request to /", t, func() {
+	convey.Convey("Given HTTP request to /", t, func() {
 		routes := GetRoutes()
 
 		req := httptest.NewRequest("GET", "/", nil)
 		resp := httptest.NewRecorder()
 
-		Convey("When request is handled by the Router", func() {
+		convey.Convey("When request is handled by the Router", func() {
 			routes.ServeHTTP(resp, req)
-			Convey("Response code should be 200", func() {
-				So(resp.Code, ShouldEqual, 200)
+			convey.Convey("Response code should be 200", func() {
+				convey.So(resp.Code, convey.ShouldEqual, 200)
 			})
 		})
 	})
