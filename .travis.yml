@@ -23,5 +23,3 @@ matrix:
         - ISOLATED=true
         - GO111MODULE=on
 
-gobuild_args: -x -ldflags "-X main.VersionString v1.2.3"
-
