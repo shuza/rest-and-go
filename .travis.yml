@@ -8,11 +8,13 @@ matrix:
       script: go get . && go test -v ./...
       env: ISOLATED=true
     - go: "1.11.x"
+      go_import_path: ~/rest-and-go
       script: go mod vendor && go test -v -mod=vendor ./...
       env:
         - ISOLATED=true
         - GO111MODULE=on
     - go: "1.12.x"
+      go_import_path: ~/rest-and-go
       script: go mod vendor && go test -v -mod=vendor ./...
       env:
         - ISOLATED=true
