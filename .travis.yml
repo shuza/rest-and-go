@@ -12,13 +12,13 @@ matrix:
       env: ISOLATED=true
     - go: "1.11.x"
       before_script: go mod vendor
-      script: go test -mod=vendor -v ./...
+      script: go test -x -ldflags "-X main.VersionString v1.2.3" -v ./...
       env:
         - ISOLATED=true
         - GO111MODULE=on
     - go: "1.12.x"
       before_script: go mod vendor
-      script: go test -mod=vendor -v ./...
+      script: go test -x -ldflags "-X main.VersionString v1.2.3" -v -mod=vendor ./...
       env:
         - ISOLATED=true
         - GO111MODULE=on
