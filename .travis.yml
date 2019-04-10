@@ -1,5 +1,7 @@
 language: go
 
+sudo: false
+
 matrix:
   include:
     - go: "1.10.x"
@@ -13,3 +15,5 @@ env:
   - GO111MODULE=on
 
 install: true
+before_script:
+  - go get github.com/smartystreets/goconvey/convey
