@@ -8,17 +8,17 @@ matrix:
       before_script:
         - go get .
         - go get github.com/smartystreets/goconvey/convey
-      script: go test -v
+      script: go test -v ./...
       env: ISOLATED=true
     - go: "1.11.x"
       before_script: go mod vendor
-      script: go mod vendor && go test -v -mod=vendor
+      script: go test -mod=vendor -v ./...
       env:
         - ISOLATED=true
         - GO111MODULE=on
     - go: "1.12.x"
       before_script: go mod vendor
-      script: go test -v -mod=vendor
+      script: go test -mod=vendor -v ./...
       env:
         - ISOLATED=true
         - GO111MODULE=on
