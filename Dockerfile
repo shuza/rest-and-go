@@ -1,6 +1,6 @@
 FROM golang
-COPY . /go/src/rest-and-go
-WORKDIR /go/src/rest-and-go
-RUN go get .
+COPY . /rest-and-go
+WORKDIR /rest-and-go
+RUN go mod vendor
 ENTRYPOINT go run main.go
 EXPOSE 8000
