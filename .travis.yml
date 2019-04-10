@@ -6,10 +6,13 @@ matrix:
   include:
     - go: "1.10.x"
       script: go get . && go test -v ./...
+      env: ISOLATED=true
     - go: "1.11.x"
       script: go mod vendor && go test -v -mod=vendor ./...
+      env: ISOLATED=true
     - go: "1.12.x"
       script: go mod vendor && go test -v -mod=vendor ./...
+      env: ISOLATED=true
 
 env:
   - GO111MODULE=on
