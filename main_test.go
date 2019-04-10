@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"github.com/smartystreets/assertions"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
@@ -16,6 +15,5 @@ import (
  **/
 
 func TestTmp(t *testing.T) {
-	a := assertions.ShouldEqual(2, 2)
-	fmt.Println("a : " + a)
+	assert.Equal(t, 200, 200)
 }

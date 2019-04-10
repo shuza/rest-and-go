@@ -1,5 +1,6 @@
 language: go
 sudo: false
+
 go:
   - 1.10.x
   - 1.11.x
@@ -14,11 +15,11 @@ matrix:
   - go: 1.12.x
     env: GO111MODULE=on
 
-git:
-  depth: 10
-
-before_install:
-  - if [[ "${GO111MODULE}" = "on" ]]; then mkdir "${HOME}/go"; export GOPATH="${HOME}/go"; fi
-
 install:
-  - go mod download
+  - if [[ "${GO111MODULE}" = "on" ]]; then go mod download; else go get -t -v ./...; fi
+
+script:
+  - go test -v -covermode=atomic -coverprofile=coverage.out
+
+notifications:
+  email: false
