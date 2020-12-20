@@ -1,2 +1,6 @@
-.idea
-vendor
+.idea/
+vendor/
+coverage.out
+coverage.html
+build/
+rest-and-go

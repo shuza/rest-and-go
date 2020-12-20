@@ -6,15 +6,6 @@ import (
 	"testing"
 )
 
-/**
- * :=  created by:  Shuza
- * :=  create date:  09-Apr-2019
- * :=  (C) CopyRight Shuza
- * :=  www.shuza.ninja
- * :=  shuza.sa@gmail.com
- * :=  Fun  :  Coffee  :  Code
- **/
-
 func TestIndexHandler(t *testing.T) {
 	convey.Convey("Given HTTP request to /", t, func() {
 		routes := GetRoutes()
